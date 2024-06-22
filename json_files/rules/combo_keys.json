@@ -1,0 +1,364 @@
+{
+    "description": "Combo Keys",
+    "manipulators": [
+        {
+            "description": "(",
+            "from": {
+                "simultaneous": [
+                    {
+                        "key_code": "s"
+                    },
+                    {
+                        "key_code": "d"
+                    },
+                    {
+                        "key_code": "f"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "9",
+                    "modifiers": [
+                        "left_shift"
+                    ]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": ")",
+            "from": {
+                "simultaneous": [
+                    {
+                        "key_code": "j"
+                    },
+                    {
+                        "key_code": "k"
+                    },
+                    {
+                        "key_code": "l"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "0",
+                    "modifiers": [
+                        "left_shift"
+                    ]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "[ and {",
+            "from": {
+                "modifiers": {
+                    "optional": [
+                        "any"
+                    ]
+                },
+                "simultaneous": [
+                    {
+                        "key_code": "z"
+                    },
+                    {
+                        "key_code": "x"
+                    },
+                    {
+                        "key_code": "c"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "open_bracket"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "] and }",
+            "from": {
+                "modifiers": {
+                    "optional": [
+                        "any"
+                    ]
+                },
+                "simultaneous": [
+                    {
+                        "key_code": "m"
+                    },
+                    {
+                        "key_code": "comma"
+                    },
+                    {
+                        "key_code": "period"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "close_bracket"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "=",
+            "from": {
+                "simultaneous": [
+                    {
+                        "key_code": "u"
+                    },
+                    {
+                        "key_code": "i"
+                    },
+                    {
+                        "key_code": "o"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "equal_sign"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "+",
+            "from": {
+                "simultaneous": [
+                    {
+                        "key_code": "i"
+                    },
+                    {
+                        "key_code": "o"
+                    },
+                    {
+                        "key_code": "p"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "equal_sign",
+                    "modifiers": [
+                        "left_shift"
+                    ]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "tilde",
+            "from": {
+                "simultaneous": [
+                    {
+                        "key_code": "e"
+                    },
+                    {
+                        "key_code": "r"
+                    },
+                    {
+                        "key_code": "t"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "grave_accent_and_tilde",
+                    "modifiers": [
+                        "left_shift"
+                    ]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "grave",
+            "from": {
+                "simultaneous": [
+                    {
+                        "key_code": "r"
+                    },
+                    {
+                        "key_code": "e"
+                    },
+                    {
+                        "key_code": "w"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "grave_accent_and_tilde"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "-",
+            "from": {
+                "simultaneous": [
+                    {
+                        "key_code": "q"
+                    },
+                    {
+                        "key_code": "w"
+                    },
+                    {
+                        "key_code": "e"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "hyphen"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "?",
+            "from": {
+                "simultaneous": [
+                    {
+                        "key_code": "j"
+                    },
+                    {
+                        "key_code": "k"
+                    },
+                    {
+                        "key_code": "l"
+                    },
+                    {
+                        "key_code": "semicolon"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "slash",
+                    "modifiers": "left_shift"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": ";",
+            "from": {
+                "simultaneous": [
+                    {
+                        "key_code": "s"
+                    },
+                    {
+                        "key_code": "d"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "semicolon"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "/",
+            "from": {
+                "simultaneous": [
+                    {
+                        "key_code": "m"
+                    },
+                    {
+                        "key_code": "comma"
+                    },
+                    {
+                        "key_code": "period"
+                    },
+                    {
+                        "key_code": "quote"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "semicolon",
+                    "modifiers": "left_shift"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "escape",
+            "from": {
+                "modifiers": {
+                    "optional": [
+                        "any"
+                    ]
+                },
+                "simultaneous": [
+                    {
+                        "key_code": "d"
+                    },
+                    {
+                        "key_code": "f"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "escape"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "enter",
+            "from": {
+                "modifiers": {
+                    "optional": [
+                        "any"
+                    ]
+                },
+                "simultaneous": [
+                    {
+                        "key_code": "j"
+                    },
+                    {
+                        "key_code": "k"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "return_or_enter"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "colon",
+            "from": {
+                "simultaneous": [
+                    {
+                        "key_code": "k"
+                    },
+                    {
+                        "key_code": "l"
+                    }
+                ]
+            },
+            "to": [
+                {
+                    "key_code": "semicolon",
+                    "modifiers": "left_shift"
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
