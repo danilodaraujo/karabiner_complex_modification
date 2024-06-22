@@ -73,9 +73,6 @@ def main():
     ],
   )
 
-  # Save a karabiner backup for version control and inspection.
-  karabiner_combiner.save_karabiner_file(path="./karabiner.json")
-
   karabiner_combiner.save_karabiner_file(
     path="/Users/danilodaraujo/.config/karabiner/karabiner.json",
   )
