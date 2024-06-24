@@ -153,53 +153,6 @@
             "type": "basic"
         },
         {
-            "description": "tilde",
-            "from": {
-                "simultaneous": [
-                    {
-                        "key_code": "e"
-                    },
-                    {
-                        "key_code": "r"
-                    },
-                    {
-                        "key_code": "t"
-                    }
-                ]
-            },
-            "to": [
-                {
-                    "key_code": "grave_accent_and_tilde",
-                    "modifiers": [
-                        "left_shift"
-                    ]
-                }
-            ],
-            "type": "basic"
-        },
-        {
-            "description": "grave",
-            "from": {
-                "simultaneous": [
-                    {
-                        "key_code": "r"
-                    },
-                    {
-                        "key_code": "e"
-                    },
-                    {
-                        "key_code": "w"
-                    }
-                ]
-            },
-            "to": [
-                {
-                    "key_code": "grave_accent_and_tilde"
-                }
-            ],
-            "type": "basic"
-        },
-        {
             "description": "-",
             "from": {
                 "simultaneous": [
