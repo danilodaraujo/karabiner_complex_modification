@@ -34,6 +34,7 @@ The Linux configuration is located at `kanata.kbd` in this repository. It is **s
 > `/usr/local/bin/kanata --cfg kanata.kbd --check`
 
 ### Known issues with karabiner
+- [ ] Caps + F + hjkl directional does not work as Ctrl + directional;
 - [ ] Left Command (acting as control) + key does not work in antigravity;
 - [ ] Function key not used;
 - [ ] Tab is acting as switching focus on antigravity - working fine on everything else;

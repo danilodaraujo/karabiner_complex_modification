@@ -119,7 +119,7 @@
 
 (deflayer nav_layer
   ;;  caps  a    s    d    f    g    h    j    k    l       ;       '    \    bspc
-  _      C-S-tab  lalt lsft lmet g    left down up   rght C-tab      '    \ _
+  _      C-S-tab  lalt lsft lctl g    left down up   rght C-tab      '    \ _
   ;;  q    w    e    r    t    y    u    i    o    p    [    ]
       @q_m w    e    r    t    home pgdn pgup end  @p_m [    ]
   ;;  z    x    c    v    b    n    m    ,    .    /
