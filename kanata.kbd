@@ -1,0 +1,144 @@
+;; kanata.kbd - Karabiner Migration
+;; Replicates the Nav Layer, Num Layer, Chords, and Base overrides.
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  caps a s d f g h j k l ; ' \ bspc
+  q w e r t y u i o p [ ]
+  z x c v b n m , . /
+  lsft lctl lalt lmet rmet ralt rctl
+  tab grv 102d spc
+)
+
+(defvar
+  tap-timeout 200
+  hold-timeout 200
+  chord-timeout 50
+)
+
+(defalias
+  ;; Layer Modifiers
+  nav (layer-toggle nav_layer)
+  num (layer-toggle num_layer)
+  
+  ;; Left Shift tap-hold: tap for CAPS, hold for LSHIFT
+  caps_nav (tap-hold $tap-timeout $hold-timeout caps (layer-toggle nav_layer))
+
+  ;; Macros for Nav Layer Sequences
+  q_m (macro M-m 50 bspc)
+  p_m (macro M-m 50 l)
+  m_m (macro ] 50 m)
+  c_m (macro [ 50 m)
+
+  ;; Aliases to map keys to chords on the base layer
+  cq  (chord base_chords q)
+  cw  (chord base_chords w)
+  ce  (chord base_chords e)
+  cs  (chord base_chords s)
+  cd  (chord base_chords d)
+  cf  (chord base_chords f)
+  cj  (chord base_chords j)
+  ck  (chord base_chords k)
+  cl  (chord base_chords l)
+  c_  (chord base_chords bspc) ;; maps physical ; to act as bspc normally, but participate in chords as bspc
+  cz  (chord base_chords z)
+  cx  (chord base_chords x)
+  cc  (chord base_chords c)
+  cm  (chord base_chords m)
+  c,  (chord base_chords ,)
+  c.  (chord base_chords .)
+  c'  (chord base_chords ')
+  cu  (chord base_chords u)
+  ci  (chord base_chords i)
+  co  (chord base_chords o)
+  cp  (chord base_chords p)
+  
+  ;; Backspace custom logic for mac delete
+  ;; Updated to (lalt) since your Command key now sends Alt
+  bdel (fork bspc (macro S-home 50 bspc) (lalt))
+
+  ;; Space bar fork: acts as Windows key when Control is held
+  ;; (unmod lmet) handles releasing/re-pressing modifiers automatically.
+  spcfork (fork spc (unmod lmet) (lctl))
+)
+
+(defchords base_chords $chord-timeout
+  (s d f)   S-9     ;; (
+  (j k l)   S-0     ;; )
+  (z x c)   [
+  (m , .)   ]
+  (u i o)   =
+  (i o p)   S-=     ;; +
+  (q w e)   -
+  (j k l bspc) S-/  ;; ?
+  (s d)     ;
+  (d f)     esc
+  (j k)     ret
+  (k l)     S-;     ;; :
+  (m , . ') S-;     ;; : / ? (Depending on layout, replicates colon logic)
+  
+  ;; Explicit single key fallbacks to prevent kanata from swallowing key strokes
+  (q) q
+  (w) w
+  (e) e
+  (s) s
+  (d) d
+  (f) f
+  (j) j
+  (k) k
+  (l) l
+  (z) z
+  (x) x
+  (c) c
+  (m) m
+  (,) ,
+  (.) .
+  (u) u
+  (i) i
+  (o) o
+  (p) p
+  (') '
+  (bspc) bspc
+)
+
+(deflayer base
+  ;;  caps  a    s    d    f    g    h    j    k    l    ;    '    \    bspc
+  @caps_nav a    @cs  @cd  @cf  g    h    @cj  @ck  @cl  @c_  @c'  \ @bdel
+  ;;  q    w    e    r    t    y    u    i    o    p    [    ]
+      @cq  @cw  @ce  r    t    y    @cu  @ci  @co  @cp  [    ]
+  ;;  z    x    c    v    b    n    m    ,    .    /
+      @cz  @cx  @cc  v    b    n    @cm  @c,  @c.  /
+  ;;  lsft lctl lalt lmet rmet ralt rctl
+      lsft lctl @num lalt lctl lctl rctl
+  ;;  tab  grv  102d
+      tab  S--  grv  @spcfork
+)
+
+(deflayer nav_layer
+  ;;  caps  a    s    d    f    g    h    j    k    l       ;       '    \    bspc
+  _      C-S-tab  lalt lsft lmet g    left down up   rght C-tab      '    \ _
+  ;;  q    w    e    r    t    y    u    i    o    p    [    ]
+      @q_m w    e    r    t    home pgdn pgup end  @p_m [    ]
+  ;;  z    x    c    v    b    n    m    ,    .    /
+      z    x    c    v    b    n    @m_m @c_m .    /
+  ;;  lsft lctl lalt lmet rmet ralt rctl
+      _    lctl _    _    _    _    _
+  ;;  tab   grv  102d
+      C-S-a _    _    _
+)
+
+(deflayer num_layer
+  ;;  caps  a    s    d    f    g    h    j    k    l    ;    '    \    bspc
+  _          a    S-8  ,    .    g    h    1    2    3    ;    '    \ C-bspc
+  ;;  q    w    e    r    t    y    u    i    o    p    [    ]
+      q    w    e    r    t    y    7    8    9    p    [    ]
+  ;;  z    x    c    v    b    n    m    ,    .    /
+      z    x    c    v    b    n    4    5    6    /
+  ;;  lsft lctl lalt lmet rmet ralt rctl
+      _    lctl _    _    0    _    _
+  ;;  tab  grv  102d
+      _    _    _    @spcfork
+)
