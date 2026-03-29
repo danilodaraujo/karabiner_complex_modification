@@ -114,7 +114,7 @@
   ;;  lsft lctl lalt lmet rmet ralt rctl
       lsft lctl @num lalt lctl lctl rctl
   ;;  tab  grv  102d
-      tab  S--  grv  @spcfork
+      tab  grv  S--  @spcfork
 )
 
 (deflayer nav_layer
